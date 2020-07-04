@@ -8,5 +8,5 @@ interface UserService {
 
     fun getUserProfileSwitches(): Single<UserProfileSwitches>
 
-    fun getUserProfile(): Single<UserProfile>
+    fun getUserProfile(userId: Int): Single<UserProfile>
 }

@@ -22,6 +22,6 @@ class TodoScreenTransformer(
 
     internal fun loadUserProfile(actions: Observable<UserProfileExtra>) =
         actions.filter { it.userProfileSwitchStatus is UserProfileSwitchesStatus.Result }
-            .map { getUserProfileUseCase.getUserProfile(it.userId)}
+            .switchMap { getUserProfileUseCase.getUserProfile(it.userId)}
 
 }
